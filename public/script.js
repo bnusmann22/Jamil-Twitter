@@ -17,7 +17,9 @@ const updateCounter = () => {
     (elapsedDate % (1000 * 60 * 60)) / (1000 * 60)
   );
 
-  Msg.innerHTML = ` built by Dev. Jamil 🚀 : <br> ${elapsedHours}hours , ${elapsedMinutes} Minutes Ago, in ${newDate}`;
+  const elapsedSeconds = Math.floor((elapsedDate % (1000 * 60)) / 1000);
+
+  Msg.innerHTML = ` built by Dev. Jamil 🚀 : <br> ${elapsedHours}hours , ${elapsedMinutes} Minutes & ${elapsedSeconds} Seconds Ago, in ${newDate}`;
 };
 
 setInterval(updateCounter, 1000);
